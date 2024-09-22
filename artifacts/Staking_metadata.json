@@ -138,6 +138,13 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdrawFunds",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -176,11 +183,11 @@
 			]
 		},
 		"Staking.sol": {
-			"keccak256": "0xcf0a1a608eee2b33e7bdf7b8dff51386962de45f4a576d7aca02d0a0d290412c",
+			"keccak256": "0x487b174638e569626db1f16e58f262b672743df79a329c27d11396da08b1fccc",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0af0464ad668f13ae3c7ab3ffabb323ecefeddf2fc21f5de47d15b1c80a1a133",
-				"dweb:/ipfs/QmP8bZJiTm2M6voZwYJfTNZPwgUMUxDCTSGFgTPDmtDFop"
+				"bzz-raw://22f6c8a996340015174bce7b5a4f677b275248e82790b13e16e50170a59c7275",
+				"dweb:/ipfs/QmQMKKJiqWhuq6Gnim2taoydvZwbgQ3XkEPvGqkngU6vZ9"
 			]
 		}
 	},

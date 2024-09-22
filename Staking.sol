@@ -24,10 +24,22 @@ contract Staking {
 
     function withdraw(uint256 _amount) public {
         require(stakingBalance[msg.sender] >= _amount, "Saldo insuficiente");
+        uint256 reward = calculateRewards(msg.sender);
         stakingBalance[msg.sender] -= _amount;
-        token.transfer(msg.sender, _amount);
-        // Distribuir recompensas antes de realizar el retiro
-        claimRewards();
+        token.transfer(msg.sender, _amount+reward);
+
+    }
+    //Lógica para reclamar los rendimientos y retirar tockens usando el patron de diseño "Withdrawal Pattern"
+        function withdrawFunds() public {
+        uint256 amount = stakingBalance[msg.sender];
+        uint256 reward = calculateRewards(msg.sender);
+        require(amount > 0, "No hay fondos para retirar");
+        
+        stakingBalance[msg.sender] = 0;
+        (bool success, ) = msg.sender.call{value: amount}("");
+        require(success);
+
+        token.transfer(msg.sender, amount+reward);
     }
 
     function claimRewards() public {
